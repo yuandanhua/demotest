@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1778749747219" clover="3.2.0">
-  <project timestamp="1778749747219" name="All files">
+<coverage generated="1778750649352" clover="3.2.0">
+  <project timestamp="1778750649352" name="All files">
     <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2" elements="11" coveredelements="11" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
     <file name="parser.ts" path="C:\Users\ydh\.routa\workspace\db4e5566-f0c5-4118-8831-6fca09820554\db4e5566-f0c5-4118-8831-6fca09820554\fe2fc64b-a683-4889-83fe-70e33e801654\8c209ef2\src\parser.ts">
       <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>

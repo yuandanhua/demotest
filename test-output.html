@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body { font-family: 'Consolas', 'Monaco', monospace; background: #1e1e1e; color: #d4d4d4; padding: 20px; }
+.header { color: #4ec9b0; font-weight: bold; }
+.pass { color: #4ec9b0; }
+.fail { color: #f48771; }
+.coverage { color: #dcdcaa; }
+.divider { border-top: 1px solid #3e3e42; margin: 10px 0; }
+.table { border-collapse: collapse; width: 100%; }
+.table th, .table td { padding: 5px 10px; text-align: left; border-bottom: 1px solid #3e3e42; }
+.table th { color: #569cd6; }
+.summary { color: #ce9178; }
+</style>
+</head>
+<body>
+<div class="header">> npm test -- --coverage</div>
+<div class="divider"></div>
+<div class="pass">PASS tests/parser.test.ts</div>
+<div class="divider"></div>
+
+<div class="header">parseMarkdown</div>
+<div>  函数导出和基本功能</div>
+<div>    <span class="pass">✓</span> 应该导出 parseMarkdown 函数</div>
+<div>    <span class="pass">✓</span> 应该接收字符串输入并返回字符串</div>
+<div>    <span class="pass">✓</span> 应该抛出 TypeError 当输入不是字符串</div>
+<div>    <span class="pass">✓</span> 应该处理空字符串</div>
+<div>  标题解析 (AC2)</div>
+<div>    <span class="pass">✓</span> 应该将 # 转换为 &lt;h1&gt;</div>
+<div>    <span class="pass">✓</span> 应该将 ## 转换为 &lt;h2&gt;</div>
+<div>    <span class="pass">✓</span> 应该正确解析多级标题</div>
+<div>    <span class="pass">✓</span> 标题应该支持内联格式</div>
+<div>  列表解析 (AC3)</div>
+<div>    <span class="pass">✓</span> 应该将 - 开头的行转换为 &lt;ul&gt;</div>
+<div>    <span class="pass">✓</span> 应该将 * 开头的行转换为 &lt;ul&gt;</div>
+<div>    <span class="pass">✓</span> 应该将数字开头的列表转换为 &lt;ol&gt;</div>
+<div>    <span class="pass">✓</span> 应该支持嵌套列表</div>
+<div>  代码块解析 (AC4)</div>
+<div>    <span class="pass">✓</span> 应该将 ``` 包裹的代码转换为 &lt;pre&gt;&lt;code&gt;</div>
+<div>    <span class="pass">✓</span> 应该保留代码块中的内容</div>
+<div>    <span class="pass">✓</span> 应该支持带语言标识的代码块</div>
+<div>    <span class="pass">✓</span> 应该支持行内代码</div>
+<div>  链接和图片解析 (AC5)</div>
+<div>    <span class="pass">✓</span> 应该将 [text](url) 转换为 &lt;a&gt; 标签</div>
+<div>    <span class="pass">✓</span> 应该支持带标题的链接</div>
+<div>    <span class="pass">✓</span> 应该将 ![alt](url) 转换为 &lt;img&gt; 标签</div>
+<div>    <span class="pass">✓</span> 图片标签应该是自闭合的</div>
+<div>    <span class="pass">✓</span> 应该支持相对路径链接和图片</div>
+<div>  段落和换行</div>
+<div>    <span class="pass">✓</span> 应该将段落包裹在 &lt;p&gt; 标签中</div>
+<div>    <span class="pass">✓</span> 应该处理多个段落</div>
+<div>  文本格式化</div>
+<div>    <span class="pass">✓</span> 应该将 **text** 转换为 &lt;strong&gt;</div>
+<div>    <span class="pass">✓</span> 应该将 *text* 转换为 &lt;em&gt;</div>
+<div>    <span class="pass">✓</span> 删除线是 GFM 扩展语法，禁用 GFM 后不转换</div>
+<div>  引用块</div>
+<div>    <span class="pass">✓</span> 应该将 > 开头的行转换为 &lt;blockquote&gt;</div>
+<div>    <span class="pass">✓</span> 应该支持多行引用</div>
+<div>  分隔线</div>
+<div>    <span class="pass">✓</span> 应该将 --- 转换为 &lt;hr&gt;</div>
+<div>    <span class="pass">✓</span> 应该将 *** 转换为 &lt;hr&gt;</div>
+<div>  组合测试</div>
+<div>    <span class="pass">✓</span> 应该正确解析包含多种元素的 Markdown</div>
+<div class="header">parseMarkdownBatch</div>
+<div>    <span class="pass">✓</span> 应该批量解析多个 Markdown</div>
+<div>    <span class="pass">✓</span> 应该保持输入输出的顺序</div>
+<div>    <span class="pass">✓</span> 应该处理空数组</div>
+<div class="header">边界情况</div>
+<div>    <span class="pass">✓</span> 应该处理只有空白符的输入</div>
+<div>    <span class="pass">✓</span> 应该处理特殊字符</div>
+<div>    <span class="pass">✓</span> 应该保留 &amp; 符号</div>
+
+<div class="divider"></div>
+<div class="coverage">-----------|---------|----------|---------|---------|-------------------</div>
+<div class="coverage">File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s </div>
+<div class="coverage">-----------|---------|----------|---------|---------|-------------------</div>
+<div class="coverage">All files  |     100 |      100 |     100 |     100 |                   </div>
+<div class="coverage"> parser.ts |     100 |      100 |     100 |     100 |                   </div>
+<div class="coverage">-----------|---------|----------|---------|---------|-------------------</div>
+
+<div class="divider"></div>
+<div class="summary">Test Suites: <span class="pass">1 passed</span>, 1 total</div>
+<div class="summary">Tests:       <span class="pass">37 passed</span>, 37 total</div>
+<div class="summary">Time:        0.954 s</div>
+</body>
+</html>
