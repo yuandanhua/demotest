@@ -1,0 +1,31 @@
+{
+  "name": "guess-number-game",
+  "version": "1.0.0",
+  "description": "一个简单有趣的猜数字小游戏，适合练习逻辑思维",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm run test:e2e",
+    "test:e2e": "node tests/e2e/run-tests.js",
+    "serve": "npx http-server . -p 8080 -o",
+    "prepublishOnly": "npm run test"
+  },
+  "keywords": [
+    "game",
+    "guess-number",
+    "browser-game",
+    "javascript"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "files": [
+    "index.html",
+    "README.md",
+    "examples/"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.40.0"
+  }
+}
